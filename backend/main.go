@@ -20,7 +20,7 @@ type Book struct {
 }
 
 func main() {
-	db, err := sql.Open("mysql", "user:password@tcp(0.0.0.0:3308)/book_store?parseTime=true")
+	db, err := sql.Open("mysql", "user:password@tcp(db:3306)/book_store?parseTime=true")
 	if err != nil {
 		log.Fatal(err)
 	}

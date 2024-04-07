@@ -1,5 +1,11 @@
 version: '3'
 services:
+  backend:
+    build: ./backend  # Path to your Go backend's Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
   db:
     image: mysql/mysql-server:5.7 
     volumes:
