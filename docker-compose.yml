@@ -1,7 +1,13 @@
 version: '3'
 services:
+  frontend:
+    build: ./console
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
   backend:
-    build: ./backend  # Path to your Go backend's Dockerfile
+    build: ./backend  
     ports:
       - "8080:8080"
     depends_on:
